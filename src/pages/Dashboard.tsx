@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Users } from 'lucide-react';
-import type { User, Role, AuthState } from "../utils/types";
+import type { User, AuthState } from "../utils/types";
 
 const Dashboard: React.FC<{ authState: AuthState; onLogout: () => void }> = ({ authState, onLogout }) => {
     const [user, setUser] = useState<User | undefined>(undefined);
@@ -10,7 +10,6 @@ const Dashboard: React.FC<{ authState: AuthState; onLogout: () => void }> = ({ a
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                console.log(authState.user);
                 setUser(authState.user ?? undefined);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Failed to fetch users');

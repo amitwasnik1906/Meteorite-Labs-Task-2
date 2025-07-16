@@ -23,7 +23,6 @@ const LoginForm: React.FC<{ onLogin: (authData: any) => void; switchToSignup: ()
             };
             const data = await graphqlRequest(LOGIN_MUTATION, variables);
             onLogin(data.login);
-            console.log(data.login);
             // Store user and token in local storage
             localStorage.setItem('user', JSON.stringify(data.login.user));
             localStorage.setItem('token', data.login.jwt);

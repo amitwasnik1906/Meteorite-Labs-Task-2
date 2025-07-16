@@ -39,12 +39,8 @@ const SignupForm: React.FC<{ onSignup: (authData: any) => void; switchToLogin: (
                 username: formData.username
             };
             const { data } = await graphqlRequest(SIGNUP_MUTATION, variables);
-            console.log(data);
-
             onSignup(data);
         } catch (err) {
-            console.log(err);
-
             setError(err instanceof Error ? err.message : 'Signup failed');
         } finally {
             setLoading(false);
