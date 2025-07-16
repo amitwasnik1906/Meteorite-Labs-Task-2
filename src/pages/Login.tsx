@@ -5,8 +5,8 @@ import { graphqlRequest, LOGIN_MUTATION } from '../lib/graphql';
 // Login Component
 const LoginForm: React.FC<{ onLogin: (authData: any) => void; switchToSignup: () => void }> = ({ onLogin, switchToSignup }) => {
     const [formData, setFormData] = useState({
-        email: 'test@gmail.com',
-        password: '1234567989'
+        email: '',
+        password: ''
     });
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
